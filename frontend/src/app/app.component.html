@@ -1,0 +1,47 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <path d="M14 2v6h6"/>
+            <path d="M16 13H8"/>
+            <path d="M16 17H8"/>
+            <path d="M10 9H8"/>
+          </svg>
+        </div>
+        <span class="logo-text">Resume Parser</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <!-- Upload View -->
+    <div *ngIf="currentView === 'upload'" class="upload-view">
+      <div class="upload-content">
+        <div class="feature-badge">
+          <span class="badge-dot">•</span>
+          <span>AI-Powered Parsing</span>
+        </div>
+        <h1 class="main-headline">
+          Extract Resume Data <span class="highlight">With AI</span>
+        </h1>
+        <p class="main-description">
+          Upload any resume format and get structured, parsed data.
+        </p>
+        <app-upload
+          (fileSelected)="onFileSelected($event)"
+        ></app-upload>
+      </div>
+    </div>
+
+    <!-- Summary View -->
+    <div *ngIf="currentView === 'summary' && summary" class="summary-view">
+      <app-summary
+        [summary]="summary"
+        (uploadNew)="onUploadNew()"
+      ></app-summary>
+    </div>
+  </main>
+</div>

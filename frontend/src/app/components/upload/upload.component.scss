@@ -1,0 +1,158 @@
+:host {
+  display: block;
+}
+
+.upload-shell {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.dropzone {
+  position: relative;
+  border: 2px dashed #D1D5DB;
+  border-radius: 12px;
+  padding: 64px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropzone.state-idle {
+  border-color: #D1D5DB;
+}
+
+.dropzone.state-dragging {
+  border-color: #6633FF;
+  background: rgba(102, 51, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.dropzone.state-uploading,
+.dropzone.state-processing {
+  border-color: #6633FF;
+  background: rgba(102, 51, 255, 0.03);
+}
+
+.dropzone.state-error {
+  border-color: #EF4444;
+  background: rgba(254, 242, 242, 0.85);
+}
+
+.upload-icon-button {
+  width: 64px;
+  height: 64px;
+  background: #6633FF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.upload-icon-button svg {
+  width: 32px;
+  height: 32px;
+}
+
+.upload-icon-button.error {
+  background: #EF4444;
+}
+
+.upload-icon-button .spinning {
+  animation: spin 1s linear infinite;
+}
+
+.upload-icon-button .pulsing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.upload-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px;
+  font-family: var(--font-body);
+}
+
+.upload-subtitle {
+  color: #6B7280;
+  font-size: 0.95rem;
+  margin: 0 0 16px;
+}
+
+.browse-link {
+  color: #6633FF;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.browse-link:hover {
+  text-decoration: underline;
+}
+
+.upload-info {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin: 16px 0 0;
+}
+
+.upload-note {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.upload-error {
+  color: #DC2626;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .upload-shell {
+    max-width: 700px;
+  }
+
+  .dropzone {
+    padding: 80px 48px;
+    min-height: 400px;
+  }
+}
