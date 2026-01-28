@@ -126,6 +126,15 @@ Get the parsed summary for a resume.
 4. Wait for the AI to analyze the resume
 5. View the extracted information in a structured format
 
+## Screenshots
+
+| Home Page                               | Parsed Resume Page                        |
+|------------------------------------------|-------------------------------------------|
+| ![UI Home](ui-home.png)                  | ![Parsed Resume](ui-parsed.png)           |
+
+
+
+
 ## Supported File Types
 
 - PDF (.pdf)
