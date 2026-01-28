@@ -81,7 +81,7 @@ gridrez/
 
 ### POST /api/resumes/upload
 
-Upload a resume file (PDF or TXT) for parsing.
+Upload a resume file (PDF, DOCX or TXT) for parsing.
 
 **Request**: `multipart/form-data` with `file` field
 
